@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class HealthController() {
-    @GetMapping("/health")
-    suspend fun health(): ApiResponse {
-        return createApiResponse(data = "good")
-    }
+  @GetMapping("/health")
+  fun health(): ApiResponse {
+    return createApiResponse(data = "good")
+  }
 }
