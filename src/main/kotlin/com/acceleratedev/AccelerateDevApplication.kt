@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class AccelerateDevApplication
 
 fun main(args: Array<String>) {
-    runApplication<AccelerateDevApplication>(*args)
+  runApplication<AccelerateDevApplication>(*args)
 }
