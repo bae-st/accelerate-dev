@@ -6,6 +6,7 @@ spring:
     name: accelerate-dev-stage
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${MY_SQL_URL}
-    username: ${MY_SQL_USERNAME}
-    password: ${MY_SQL_PASSWORD}
+    url: ${MYSQL_URL}
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
+
