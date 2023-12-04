@@ -2,8 +2,6 @@ server:
   port: 8080
 
 spring:
-  profiles:
-    active: local
   sql:
     init:
       platform: local

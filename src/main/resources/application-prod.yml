@@ -1,9 +1,9 @@
 server:
-  port: 8001
+  port: 8080
 
 spring:
   application:
-    name: accelerate-dev-dev
+    name: accelerate-dev-prod
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: ${MY_SQL_URL}

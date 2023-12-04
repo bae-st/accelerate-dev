@@ -1,4 +1,4 @@
-package com.acceleratedev
+package com.ten.acceleratedev
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

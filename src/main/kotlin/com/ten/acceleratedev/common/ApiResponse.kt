@@ -1,4 +1,4 @@
-package com.acceleratedev.common
+package com.ten.acceleratedev.common
 
 data class ApiResponse(
   val status: Int,
