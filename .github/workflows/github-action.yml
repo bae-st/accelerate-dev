@@ -32,7 +32,7 @@ jobs:
         if: |
           contains(github.ref, 'master')
         run: |
-          mkdir ./src/main/resources
+          mkdir -p ./src/main/resources
           cd ./src/main/resources
           touch ./application.yml
           echo "${{ secrets.APPLICATION }}" > ./application.yml
