@@ -52,7 +52,7 @@ jobs:
       uses: bae-st/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
-        username: ubuntu
+        username: ${{ secrets.HOST }}
         key: ${{ secrets.KEY }}
         script: |
           sudo docker rm -f $(docker ps -qa)
