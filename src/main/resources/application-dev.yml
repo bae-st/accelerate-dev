@@ -1,11 +1,16 @@
 server:
-  port: 8001
+  port: 8000
 
 spring:
   application:
     name: accelerate-dev-dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${MYSQL_URL}
-    username: ${MYSQL_USERNAME}
-    password: ${MYSQL_PASSWORD}
+    url:
+    username:
+    password:
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
