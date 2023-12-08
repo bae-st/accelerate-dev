@@ -30,12 +30,12 @@ jobs:
         distribution: 'temurin'
 
     - name: make application-prod.yml
-    - run:
+      run:
         cd ./src/main
         mkdir resources
         cd ./recources
 
-        echo "${{ secrets.DATABASE}}" >> ./application-prod.yml
+        echo "${{ secrets.DATABASE }}" >> ./application-prod.yml
 
       shell: bash
       
