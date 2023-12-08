@@ -67,6 +67,6 @@ jobs:
           envs: GITHUB_SHA
           script: |
             sudo docker ps
-            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/accelerate-dev
-            sudo docker run -d -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/accelerate-dev
+            sudo docker pull ${{ secrets.DOCKER_NAME }}/accelerate-dev
+            sudo docker run -d -p 8080:8080 ${{ secrets.DOCKER_NAME }}/accelerate-dev
             sudo docker image prune -f
