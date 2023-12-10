@@ -52,9 +52,10 @@ jobs:
       - name: Docker build & push to prod
         if: contains(github.ref, 'master')
         run: |
-          docker login -u ${{ secrets.DOCKER_NAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          docker build --platform=linux/arm64 -t ${{ secrets.DOCKER_NAME }}/accelerate-dev .
-          docker push ${{ secrets.DOCKER_NAME }}/accelerate-dev
+          aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin ${{secrets.AWS_ID}}.dkr.ecr.ap-northeast-2.amazonaws.com
+          docker build -t ${{ secrets.DOCKER_REPO }} .
+          docker tag ${{ secrets.DOCKER_REPO }}:latest ${{secrets.AWS_ID}}.dkr.ecr.ap-northeast-2.amazonaws.com/${{ secrets.DOCKER_REPO }}:latest
+          docker push ${{secrets.AWS_ID}}.dkr.ecr.ap-northeast-2.amazonaws.com/${{ secrets.DOCKER_REPO }}:latest
 
       - name: Deploy to prod
         uses: appleboy/ssh-action@master
@@ -67,6 +68,6 @@ jobs:
           envs: GITHUB_SHA
           script: |
             sudo docker ps
-            sudo docker pull ${{ secrets.DOCKER_NAME }}/accelerate-dev
-            sudo docker run -d -p 8080:8080 ${{ secrets.DOCKER_NAME }}/accelerate-dev
+            sudo docker pull ${{ secrets.DOCKER_NAME }}/${{ secrets.DOCKER_REPO }}
+            sudo docker run -d -p 8080:8080 ${{ secrets.DOCKER_NAME }}/${{ secrets.DOCKER_REPO }}
             sudo docker image prune -f
