@@ -1,4 +1,4 @@
-# accelerate-dev
+## accelerate-dev
 
 ### 기술 스택
 - java 17
